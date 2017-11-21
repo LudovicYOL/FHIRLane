@@ -7,9 +7,13 @@ import { AppComponent } from './app.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
 
 import { FilterPipeModule } from 'ngx-filter-pipe';
+import { ConsultDonneesComponent } from './consult-donnees/consult-donnees.component';
+import { PersoDataService } from './perso-data.service';
+
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
-  // { path: 'prescription', component: PrescriptionComponent },
+   { path: 'consult', component: ConsultDonneesComponent },
   // { path: 'stock', component: StockComponent }
 ];
 
@@ -17,17 +21,19 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     MenuBarComponent,
+    ConsultDonneesComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     FilterPipeModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [PersoDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
