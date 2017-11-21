@@ -1,9 +1,3 @@
-<!-- <ul *ngFor="let d of myData">
-  <li>{{d.ressourceType}}</li>
-  <li>{{d.bodyHeight}}</li>
-  <li>{{d.temperature}}</li>
-  <li>{{d.bodyWeight}}</li>
-</ul> -->
-<p>
-  {{myData[0]._id}}
-</p>
+<ul *ngFor="let d of myData">
+  <li>{{d.code.coding[0].display}} : {{d.valueQuantity.value}} {{d.valueQuantity.code}}</li>
+</ul>

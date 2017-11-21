@@ -15,7 +15,7 @@ export class ConsultDonneesComponent implements OnInit {
   getMyData(): void {
     this.myData = this.persoDataService.getData().subscribe(data => {
       this.myData = data;
-      // console.log(this.myData[0]);
+      console.log(this.myData[0]);
       }
     );
   }
