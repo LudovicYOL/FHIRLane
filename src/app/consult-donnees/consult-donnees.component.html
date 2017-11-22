@@ -1,4 +1,4 @@
-<div class='container'>
+<!-- <div class='container'>
 
   <div class="row">
     <div class='col s3'></div>
@@ -37,4 +37,49 @@
   </div>
 
 </div>
+-->
+<div class='section'>
+  <div class='row center'>
+    <h4>Consultation des données personnelles</h4>
+    <p>Veuillez entrer votre ID dans le champ ci-dessous pour consulter vos données personnelles</p>
+  </div>
+</div>
 
+<div class='container'>
+  <div class="input-field">
+    <i class="material-icons prefix">account_circle</i>
+    <input #id id="id" type="text" class="validate">
+    <label for="id">ID du patient</label>
+  </div>
+</div>
+
+<div class='section'>
+  <div class='row center'>
+    <button class="btn waves-effect waves-light" (click)="getMyData(id.value)">
+      <i class="material-icons right">search</i>
+      Chercher
+    </button>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='row center'>
+    <ul class='collapsible'>
+      <li *ngFor="let d of myData">
+
+        <div class="collapsible-header">
+          <div class='col s12'>
+            {{d.code.coding[0].display}}
+          </div>
+        </div>
+
+        <div class='collapsible-body'>
+          <div class='col s12'>
+            {{d.valueQuantity.value}} {{d.valueQuantity.code}}
+          </div>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+</div>
