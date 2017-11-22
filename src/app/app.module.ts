@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { PatientIdtComponent } from './patient-idt/patient-idt.component';
 import { PatientIdserviceService } from './patient-idservice.service';
+// import * as $ from 'jquery';
 
 const appRoutes: Routes = [
   { path: '', component: PatientIdtComponent },
