@@ -11,8 +11,11 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
 
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { RdvComponent } from './rdv/rdv.component';
+import { PatientIdtComponent } from './patient-idt/patient-idt.component';
+import { PatientIdserviceService } from './patient-idservice.service';
 
 const appRoutes: Routes = [
+  { path: '', component: PatientIdtComponent },
   { path: 'rdv', component: RdvComponent }
   // { path: 'stock', component: StockComponent }
 ];
@@ -22,6 +25,7 @@ const appRoutes: Routes = [
     AppComponent,
     MenuBarComponent,
     RdvComponent,
+    PatientIdtComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,7 @@ const appRoutes: Routes = [
     ),
     CalendarModule.forRoot()
   ],
-  providers: [],
+  providers: [PatientIdserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
