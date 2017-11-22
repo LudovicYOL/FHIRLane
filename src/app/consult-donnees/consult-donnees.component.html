@@ -65,20 +65,23 @@
 <div class='container'>
   <div class='row center'>
     <ul class='collapsible'>
+      <h3>Body temperature</h3>
       <li *ngFor="let d of myData">
-
-        <div class="collapsible-header">
-          <div class='col s12'>
-            {{d.code.coding[0].display}}
-          </div>
-        </div>
-
-        <div class='collapsible-body'>
-          <div class='col s12'>
+          <div *ngIf="d.code.coding[0].display=='Body temperature'">
             {{d.valueQuantity.value}} {{d.valueQuantity.code}}
           </div>
-        </div>
-
+      </li>
+      <h3>Body weight</h3>
+      <li *ngFor="let d of myData">
+          <div *ngIf="d.code.coding[0].display=='Body Weight'">
+            {{d.valueQuantity.value}} {{d.valueQuantity.code}}
+          </div>
+      </li>
+      <h3>Systolic blood pressure</h3>
+      <li *ngFor="let d of myData">
+          <div *ngIf="d.code.coding[0].display=='Systolic blood pressure'">
+            {{d.valueQuantity.value}} {{d.valueQuantity.code}}
+          </div>
       </li>
     </ul>
   </div>
