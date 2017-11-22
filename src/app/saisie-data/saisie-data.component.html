@@ -24,7 +24,9 @@
     <label for="poids">Poids</label>
   </div>
 
-  <button class="btn waves-effect waves-light" (click)="setMyData(temp.value, pouls.value, taille.value, poids.value)">
+  <button class="btn waves-effect waves-light"
+          (click)="setMyData(temp.value, pouls.value, taille.value, poids.value);
+          temp.value=''; pouls.value = ''; taille.value = ''; poids.value = '';">
       <i class="material-icons right">save</i>
       Enregistrer
     </button>
