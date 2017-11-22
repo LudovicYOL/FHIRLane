@@ -9,6 +9,7 @@ import { PersoDataService } from '../perso-data.service';
 export class ConsultDonneesComponent implements OnInit {
 
   private myData: Object;
+  private resolveData = false;
   constructor(private persoDataService: PersoDataService) { }
 
   private getMyData(id: string): void {
@@ -18,6 +19,7 @@ export class ConsultDonneesComponent implements OnInit {
           // console.log(this.myData[0]);
         }
       );
+      this.resolveData = true;
     }
   }
 

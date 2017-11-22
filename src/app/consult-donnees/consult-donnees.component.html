@@ -1,5 +1,29 @@
-<input #id />
-<button (click)="getMyData(id.value)">Chercher</button>
-<ul *ngFor="let d of myData">
-  <li>{{d.code.coding[0].display}} : {{d.valueQuantity.value}} {{d.valueQuantity.code}}</li>
-</ul>
+<div class='col s3'>
+  <div class="row">
+    <input #id />
+    <button (click)="getMyData(id.value)">Chercher</button>
+  </div>
+</div>
+
+<div class="col s9">
+  <router-outlet name='sub'></router-outlet>
+  <ul class='collapsible'>
+    <li *ngFor="let d of myData">
+
+      <div class="collapsible-header">
+        <div class='col s9'>
+          {{d.code.coding[0].display}}
+        </div>
+      </div>
+
+      <div class='collapsible-body'>
+        <div class='row'>
+          <div class='col s4'>
+            {{d.valueQuantity.value}} {{d.valueQuantity.code}}
+          </div>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+</div>
