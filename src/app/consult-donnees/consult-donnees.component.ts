@@ -9,17 +9,14 @@ import { PersoDataService } from '../perso-data.service';
 export class ConsultDonneesComponent implements OnInit {
 
   private myData: Object;
-  private resolveData = false;
   constructor(private persoDataService: PersoDataService) { }
 
   private getMyData(id: string): void {
     if (id) {
       this.myData = this.persoDataService.getData(id).subscribe(data => {
           this.myData = data;
-          // console.log(this.myData[0]);
         }
       );
-      this.resolveData = true;
     }
   }
 
