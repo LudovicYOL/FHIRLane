@@ -1,7 +1,15 @@
 <div class='col s3'>
   <div class="row">
-    <input #id />
-    <button (click)="getMyData(id.value)">Chercher</button>
+    <!-- <input #id /> -->
+    <div class="input-field row s6">
+      <i class="material-icons prefix">account_circle</i>
+      <input #id id="id" type="text" class="validate">
+      <label for="id">ID du patient</label>
+    </div>
+    <button class="btn waves-effect waves-light" (click)="getMyData(id.value)">
+      <i class="material-icons right">search</i>
+      Chercher
+    </button>
   </div>
 </div>
 
