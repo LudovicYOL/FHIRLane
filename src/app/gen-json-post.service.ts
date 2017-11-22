@@ -81,6 +81,7 @@ export class GenJsonPostService {
   }
 
   generateJSONPoids(poids: string): string {
+    var date = new Date();
     return '{\n' +
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
@@ -97,6 +98,7 @@ export class GenJsonPostService {
       '\t\t\t\t\t}\n' +
       '\t\t\t\t]\n' +
       '\t\t\t},\n' +
+      '\t\t"effectiveDateTime":' + '"' + String(date) + '"' + ',\n' +
       '\t\t"valueQuantity": {\n' +
       '\t\t\t"value":' + '"' + poids + '"' + ',\n' +
       '\t\t\t"unit": "lbs",\n' +

@@ -20,5 +20,13 @@ export class ConsultDonneesComponent implements OnInit {
     }
   }
 
+  formatDate(date: string) : string {
+  if (date){
+  date = date.slice(0,10)
+  var parseDate = date.split("-");
+  return(parseDate[2]+"/"+parseDate[1]+"/"+parseDate[0] + " : ");
+}
+}
+
   ngOnInit() {}
 }
