@@ -11,10 +11,14 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
 
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { RdvComponent } from './rdv/rdv.component';
+import { ConsulterRdvComponent } from './consulter-rdv/consulter-rdv.component';
+import { RdvDataService } from './rdv-data.service';
+
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
-  { path: 'rdv', component: RdvComponent }
-  // { path: 'stock', component: StockComponent }
+  { path: 'rdv', component: RdvComponent },
+  { path: 'consulterrdv', component: ConsulterRdvComponent }
 ];
 
 @NgModule({
@@ -22,19 +26,21 @@ const appRoutes: Routes = [
     AppComponent,
     MenuBarComponent,
     RdvComponent,
+    ConsulterRdvComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
     FilterPipeModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
     CalendarModule.forRoot()
   ],
-  providers: [],
+  providers: [RdvDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

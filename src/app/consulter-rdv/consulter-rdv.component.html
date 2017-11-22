@@ -1,0 +1,9 @@
+<input #id />
+<button (click)="searchPatient(id.value)">Chercher</button>
+<ul *ngFor="let d of myData">
+<li>date : {{d.start}}</li>
+<li>heure : {{d.end}} </li>
+<li>durée :{{d.minutesDuration}}</li>
+<li>Médecin : </li>
+<li>Description : {{d.comment}}</li>
+</ul>
