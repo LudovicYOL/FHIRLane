@@ -16,7 +16,11 @@ import { RdvDataService } from './rdv-data.service';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { PatientIdtComponent } from './patient-idt/patient-idt.component';
+import { PatientIdserviceService } from './patient-idservice.service';
+
 const appRoutes: Routes = [
+  { path: '', component: PatientIdtComponent },
   { path: 'rdv', component: RdvComponent },
   { path: 'consulterrdv', component: ConsulterRdvComponent }
 ];
@@ -26,7 +30,8 @@ const appRoutes: Routes = [
     AppComponent,
     MenuBarComponent,
     RdvComponent,
-    ConsulterRdvComponent,
+    PatientIdtComponent,
+    ConsulterRdvComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,7 @@ const appRoutes: Routes = [
     ),
     CalendarModule.forRoot()
   ],
-  providers: [RdvDataService],
+  providers: [RdvDataService, PatientIdserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,22 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col s3'>
+    </div>
+    <div class='col s6'>
+      <div class='row center'><p>Merci d'indiquer votre ID Patient afin d'utiliser cette application</p></div>
+      <div class='row'>
+        <div class="input-field">
+          <input #idPatient placeholder="ID patient" id="idPatient" type="text" class="validate" idPatient.value=''>
+          <label for="idPatient">ID Patient</label>
+        </div>
+      </div>
+      <div class='row center'>
+        <button class='btn red' (click)="setPatientId(idPatient.value)">
+          <i class="small material-icons left">check</i>Enregistrer votre ID
+        </button>
+      </div>
+    </div>
+    <div class='col s3'>
+    </div>
+  </div>
+</div>

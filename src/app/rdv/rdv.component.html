@@ -1,4 +1,44 @@
-<mwl-calendar-week-view
-  [viewDate]="viewDate"
-  [events]="events">
-</mwl-calendar-week-view>
+<div class='section'>
+  <div class='row center'>
+    <h4>Prise de rendez-vous</h4>
+    <p>Recherchez les horaires disponibles afin de pouvoir effectuer une demande de RDV</p>
+    <button class='btn red'>
+      <i class="small material-icons left">check</i>Rechercher
+    </button>
+  </div>
+</div>
+<div class='divider'>
+</div>
+<div class='section'>
+  <div class='row center'>
+    <div class='col s4'>
+      <label>Médecin</label>
+      <div class='input field'>
+        <select>
+          <option value='' disabled selected>Sélectionnez un praticien</option>
+          <option value='1' >option 1</option>
+          <option value='2' >option 2</option>
+        </select>
+      </div>
+    </div>
+    <div class='col s4'>
+      <label>Date possible</label>
+      <input type="text" class="datepicker">
+    </div>
+    <div class='col s4'>
+      <label>Horaire possible</label>
+      <div class='input field'>
+        <select>
+          <option value='' disabled selected>Sélectionnez un horaire</option>
+          <option value='1' >option 1</option>
+          <option value='2' >option 2</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class='row center'>
+    <button class='btn red'>
+      <i class="small material-icons left">check</i>Effectuer la demande
+    </button>
+  </div>
+</div>
