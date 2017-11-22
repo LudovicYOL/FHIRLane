@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RdvData } from '../rdvData';
 import { RdvDataService } from '../rdv-data.service';
+import { PatientIdserviceService } from '../patient-idservice.service';
+declare let Materialize:any
 
 @Component({
   selector: 'app-consulter-rdv',
@@ -11,7 +13,7 @@ export class ConsulterRdvComponent implements OnInit {
 
   private myData: Object;
   private patientId: string;
-  constructor(private RdvDataService: RdvDataService) { }
+  constructor(private RdvDataService: RdvDataService,private patiendIDService : PatientIdserviceService) { }
 
   getMyData(): void {
     this.myData = this.RdvDataService.getData(this.patientId).subscribe(data => {
@@ -20,10 +22,15 @@ export class ConsulterRdvComponent implements OnInit {
     );
   }
 
+  getPatientId(){
+    return this.patientId = this.patiendIDService.getId();
+  }
+
   searchPatient(id: string): void {
     if (id) {
       this.patientId = id;
       this.getMyData();
+      console.log(id);
     }
   }
 
@@ -73,5 +80,6 @@ export class ConsulterRdvComponent implements OnInit {
 
   ngOnInit() {
     // this.getMyData();
+
   }
 }

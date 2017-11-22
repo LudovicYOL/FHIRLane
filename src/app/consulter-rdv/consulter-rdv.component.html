@@ -1,5 +1,6 @@
-<input #id />
-<button class='btn red' (click)="searchPatient(id.value)">Chercher</button>
+
+<button class='btn red' (click)="searchPatient(getPatientId())">Afficher les rendez-vous</button>
+
 <ul *ngFor="let d of myData">
   <h3>Rendez vous :</h3>
   <li><div class="type">Date : </div> <div class="info"> {{ formatDate(d.start) }} à {{ formatHeure(d.start) }}</div></li> <br>
