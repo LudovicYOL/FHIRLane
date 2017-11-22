@@ -16,18 +16,59 @@ export class ConsulterRdvComponent implements OnInit {
   getMyData(): void {
     this.myData = this.RdvDataService.getData(this.patientId).subscribe(data => {
       this.myData = data;
-  //    console.log(this.myData[0]);
       }
     );
   }
 
   searchPatient(id: string): void {
-    console.log(id);
     if (id) {
       this.patientId = id;
-      console.log(this.patientId);
       this.getMyData();
     }
+  }
+
+  formatDate(date: string) : string {
+    date = date.slice(0,10)
+    var parseDate = date.split("-");
+    return(parseDate[2]+"/"+parseDate[1]+"/"+parseDate[0]);
+  }
+
+  formatHeure(heure: string) : string {
+    heure = heure.slice(11,16)
+    return(heure);
+  }
+
+  statutRdv(statut: string) : string {
+    var response="";
+    switch(statut) {
+        case "proposed":
+            response = "Aucun participant n'a validé le rendez-vous";
+            break;
+        case "pending":
+            response = "Certains participants n'ont pas encore validé le rendez-vous";
+            break;
+        case "booked":
+            response = "Tous les participants ont validé le rendez-vous.";
+            break;
+        case "arrived":
+            response = "Certains patients sont arrivés";
+            break;
+        case "futfilled":
+            response = "La date de rendez-vous est dépassée";
+            break;
+        case "cancelled":
+            response = "Le rendez vous est annulé";
+            break;
+        case "noshow":
+            response = "Certains des participants ne sont pas venus au rendez-vous";
+            break;
+        case "entered-in-error":
+            response = "Ce rendez-vous ne doit pas apparaitre dans le dossier patient";
+            break;
+        default:
+          response = "oups";
+    }
+    return(response);
   }
 
   ngOnInit() {

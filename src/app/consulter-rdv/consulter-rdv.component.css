@@ -1,0 +1,15 @@
+ul {
+  background-color: #FFDAB9;
+}
+
+div{
+  float: left;
+}
+  .type{
+    margin-left: 5%;
+    font-weight: bold;
+  }
+
+  .info{
+    margin-left: 2px;
+  }
