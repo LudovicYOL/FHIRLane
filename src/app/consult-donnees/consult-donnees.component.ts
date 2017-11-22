@@ -10,27 +10,17 @@ import { PersoDataService } from '../perso-data.service';
 export class ConsultDonneesComponent implements OnInit {
 
   private myData: Object;
-  private patientId: string;
   constructor(private persoDataService: PersoDataService) { }
 
-  getMyData(): void {
-    this.myData = this.persoDataService.getData(this.patientId).subscribe(data => {
-      this.myData = data;
-      console.log(this.myData[0]);
-      }
-    );
-  }
-
-  searchPatient(id: string): void {
-    console.log(id);
+  private getMyData(id: string): void {
     if (id) {
-      this.patientId = id;
-      console.log(this.patientId);
-      this.getMyData();
+      this.myData = this.persoDataService.getData(id).subscribe(data => {
+          this.myData = data;
+          // console.log(this.myData[0]);
+        }
+      );
     }
   }
 
-  ngOnInit() {
-    // this.getMyData();
-  }
+  ngOnInit() {}
 }
