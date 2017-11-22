@@ -11,10 +11,12 @@ import { ConsultDonneesComponent } from './consult-donnees/consult-donnees.compo
 import { PersoDataService } from './perso-data.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SaisieDataComponent } from './saisie-data/saisie-data.component';
+import { GenJsonPostService } from './gen-json-post.service';
 
 const appRoutes: Routes = [
    { path: 'consult', component: ConsultDonneesComponent },
-  // { path: 'stock', component: StockComponent }
+   { path: 'saisie', component: SaisieDataComponent }
 ];
 
 @NgModule({
@@ -22,6 +24,7 @@ const appRoutes: Routes = [
     AppComponent,
     MenuBarComponent,
     ConsultDonneesComponent,
+    SaisieDataComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [PersoDataService],
+  providers: [PersoDataService, GenJsonPostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
