@@ -9,8 +9,8 @@ import { PersoDataService } from '../perso-data.service';
 })
 export class ConsultDonneesComponent implements OnInit {
 
-  myData: Object;
-  patientId: string;
+  private myData: Object;
+  private patientId: string;
   constructor(private persoDataService: PersoDataService) { }
 
   getMyData(): void {
@@ -25,10 +25,12 @@ export class ConsultDonneesComponent implements OnInit {
     console.log(id);
     if (id) {
       this.patientId = id;
+      console.log(this.patientId);
+      this.getMyData();
     }
   }
 
   ngOnInit() {
-    this.getMyData();
+    // this.getMyData();
   }
 }

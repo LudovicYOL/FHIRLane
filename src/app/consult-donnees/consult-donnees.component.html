@@ -1,5 +1,5 @@
 <input #id />
-<button (click)="serchPatient(id.value)">Chercher</button>
+<button (click)="searchPatient(id.value)">Chercher</button>
 <ul *ngFor="let d of myData">
   <li>{{d.code.coding[0].display}} : {{d.valueQuantity.value}} {{d.valueQuantity.code}}</li>
 </ul>
