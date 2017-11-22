@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PatientIdserviceService } from '../patient-idservice.service';
-
+declare let Materialize:any
 
 @Component({
   selector: 'app-patient-idt',
