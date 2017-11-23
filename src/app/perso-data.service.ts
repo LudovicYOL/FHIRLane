@@ -19,19 +19,19 @@ export class PersoDataService {
     return this.httpClient.get(this.getURL + id, {headers: this.httpHeaders});
   }
 
-  setDataTemp(temp: string): Observable<Object> {
-    return this.httpClient.post(this.setURL, this.jsonService.generateJSONTemp(temp), {headers: this.httpHeaders});
+  setDataTemp(temp: string, id: string): Observable<Object> {
+    return this.httpClient.post(this.setURL, this.jsonService.generateJSONTemp(temp, id), {headers: this.httpHeaders});
   }
 
-  setDataPouls(pouls: string): Observable<Object> {
-    return this.httpClient.post(this.setURL, this.jsonService.generateJSONPouls(pouls), {headers: this.httpHeaders});
+  setDataPouls(pouls: string, id: string): Observable<Object> {
+    return this.httpClient.post(this.setURL, this.jsonService.generateJSONPouls(pouls, id), {headers: this.httpHeaders});
   }
 
-  setDataTaille(taille: string): Observable<Object> {
-    return this.httpClient.post(this.setURL, this.jsonService.generateJSONTaile(taille), {headers: this.httpHeaders});
+  setDataTaille(taille: string, id: string): Observable<Object> {
+    return this.httpClient.post(this.setURL, this.jsonService.generateJSONTaile(taille, id), {headers: this.httpHeaders});
   }
 
-  setDataPoids(poids: string): Observable<Object> {
-    return this.httpClient.post(this.setURL, this.jsonService.generateJSONPoids(poids), {headers: this.httpHeaders});
+  setDataPoids(poids: string, id: string): Observable<Object> {
+    return this.httpClient.post(this.setURL, this.jsonService.generateJSONPoids(poids, id), {headers: this.httpHeaders});
   }
 }
