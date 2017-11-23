@@ -1,0 +1,45 @@
+<div class='section'>
+  <div class='row center'>
+    <h4>Saisie des données personnelles</h4>
+    <p>Veuillez entrer vos données dans au moins un des quatre champs disponibles</p>
+  </div>
+</div>
+
+<div class='container'>
+
+  <div class="input-field">
+    <i class="material-icons prefix">av_timer</i>
+    <input #temp id="temp" type="text" class="validate">
+    <label for="temp">Température</label>
+  </div>
+
+  <div class="input-field">
+    <i class="material-icons prefix">favorite</i>
+    <input #pouls id="pouls" type="text" class="validate">
+    <label for="pouls">Pouls</label>
+  </div>
+
+  <div class="input-field">
+    <i class="material-icons prefix">people</i>
+    <input #taille id="taille" type="text" class="validate">
+    <label for="taille">Taille</label>
+  </div>
+
+  <div class="input-field">
+    <i class="material-icons prefix">local_pizza</i>
+    <input #poids id="poids" type="text" class="validate">
+    <label for="poids">Poids</label>
+  </div>
+
+</div>
+
+<div class='section'>
+  <div class='row center'>
+    <button class="btn waves-effect waves-light"
+            (click)="setMyData(temp.value, pouls.value, taille.value, poids.value);
+          temp.value=''; pouls.value = ''; taille.value = ''; poids.value = '';">
+      <i class="material-icons right">save</i>
+      Enregistrer
+    </button>
+  </div>
+</div>

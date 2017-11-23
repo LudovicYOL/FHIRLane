@@ -19,10 +19,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { PatientIdtComponent } from './patient-idt/patient-idt.component';
 import { PatientIdserviceService } from './patient-idservice.service';
 
+import { ConsultDonneesComponent } from './consult-donnees/consult-donnees.component';
+import { PersoDataService } from './perso-data.service';
+import { SaisieDataComponent } from './saisie-data/saisie-data.component';
+import { GenJsonPostService } from './gen-json-post.service';
+
 const appRoutes: Routes = [
-  { path: '', component: PatientIdtComponent },
-  { path: 'rdv', component: RdvComponent },
-  { path: 'consulterrdv', component: ConsulterRdvComponent }
+   { path: 'consult', component: ConsultDonneesComponent },
+   { path: 'saisie', component: SaisieDataComponent },
+   { path: '', component: PatientIdtComponent },
+   { path: 'rdv', component: RdvComponent },
+   { path: 'consulterrdv', component: ConsulterRdvComponent }
 ];
 
 @NgModule({
@@ -31,7 +38,9 @@ const appRoutes: Routes = [
     MenuBarComponent,
     RdvComponent,
     PatientIdtComponent,
-    ConsulterRdvComponent
+    ConsulterRdvComponent,
+    ConsultDonneesComponent,
+    SaisieDataComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +54,7 @@ const appRoutes: Routes = [
     ),
     CalendarModule.forRoot()
   ],
-  providers: [RdvDataService, PatientIdserviceService],
+  providers: [RdvDataService, PatientIdserviceService,PersoDataService, GenJsonPostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
