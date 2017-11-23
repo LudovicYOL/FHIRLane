@@ -6,6 +6,7 @@ export class GenJsonPostService {
   constructor() { }
 
   generateJSONTemp (temp: string): string {
+    var date = new Date();
     return '{\n' +
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
@@ -22,6 +23,7 @@ export class GenJsonPostService {
       '\t\t\t\t\t}\n' +
       '\t\t\t\t]\n' +
       '\t\t\t},\n' +
+      '\t\t"effectiveDateTime":' + '"' + String(date) + '"' + ',\n' +
       '\t\t"valueQuantity": {\n' +
       '\t\t\t"value":' + '"'  + temp + '"' + ',\n' +
       '            "system": "http://unitsofmeasure.org",\n' +
@@ -31,6 +33,7 @@ export class GenJsonPostService {
   }
 
   generateJSONPouls(pouls: string): string {
+    var date = new Date();
     return '{\n' +
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
@@ -46,6 +49,7 @@ export class GenJsonPostService {
       '\t\t\t\t\t}\n' +
       '\t\t\t\t]\n' +
       '\t\t\t},\n' +
+      '\t\t"effectiveDateTime":' + '"' + String(date) + '"' + ',\n' +
       '\t\t"valueQuantity": {\n' +
       '\t\t\t"value":' + '"' + pouls + '"' + ',\n' +
       '\t\t\t"unit": "mmHg",\n' +
@@ -56,6 +60,7 @@ export class GenJsonPostService {
   }
 
   generateJSONTaile(taille: string): string {
+    var date = new Date();
     return '{\n' +
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
@@ -71,6 +76,7 @@ export class GenJsonPostService {
       '\t\t\t\t\t}\n' +
       '\t\t\t\t]\n' +
       '\t\t\t},\n' +
+      '\t\t"effectiveDateTime":' + '"' + String(date) + '"' + ',\n' +
       '\t\t"valueQuantity": {\n' +
       '\t\t\t"value":' + '"' + taille + '"' + ',\n' +
       '\t\t\t"unit": "in",\n' +

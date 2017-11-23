@@ -11,6 +11,7 @@ export class ConsultDonneesComponent implements OnInit {
 
   private myData: Object;
   private resolveData = false;
+  private patientId;
   constructor(private persoDataService: PersoDataService,private patiendIDService : PatientIdserviceService) { }
 
   private getMyData(id: string): void {
