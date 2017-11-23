@@ -9,6 +9,7 @@ import { PersoDataService } from '../perso-data.service';
 export class ConsultDonneesComponent implements OnInit {
 
   private myData: Object;
+  private resolveData = false;
   constructor(private persoDataService: PersoDataService) { }
 
   private getMyData(id: string): void {
@@ -17,16 +18,17 @@ export class ConsultDonneesComponent implements OnInit {
           this.myData = data;
         }
       );
+      this.resolveData = true;
     }
   }
 
-  formatDate(date: string) : string {
-  if (date){
-  date = date.slice(0,10)
-  var parseDate = date.split("-");
-  return(parseDate[2]+"/"+parseDate[1]+"/"+parseDate[0] + " : ");
-}
-}
+  formatDate(date: string): string {
+    if (date) {
+      date = date.slice(0, 10);
+      const parseDate = date.split('-');
+      return(parseDate[2] + '/' + parseDate[1] + '/' + parseDate[0] + ' : ');
+    }
+  }
 
   ngOnInit() {}
 }
