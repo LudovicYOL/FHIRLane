@@ -11,7 +11,7 @@ export class GenJsonPostService {
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
       '\t\t"subject": {\n' +
-      '\t\t\t"reference": "Patient/\' + id + \'"\n' +
+      '\t\t\t"reference": "Patient/' + id + '"\n' +
       '\t\t},\n' +
       '\t\t"code": {\n' +
       '\t\t\t\t"coding": [\n' +
@@ -38,7 +38,7 @@ export class GenJsonPostService {
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
       '\t\t"subject": {\n' +
-      '\t\t\t"reference": "Patient/\' + id + \'"\n' +
+      '\t\t\t"reference": "Patient/' + id + '"\n' +
       '\t\t},\n' +
       '\t\t"code": {\n' +
       '\t\t\t\t"coding": [\n' +
@@ -65,7 +65,7 @@ export class GenJsonPostService {
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
       '\t\t"subject": {\n' +
-      '\t\t\t"reference": "Patient/\' + id + \'"\n' +
+      '\t\t\t"reference": "Patient/' + id + '"\n' +
       '\t\t},\n' +
       '\t\t"code": {\n' +
       '\t\t\t\t"coding": [\n' +
@@ -92,7 +92,7 @@ export class GenJsonPostService {
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
       '\t\t"subject": {\n' +
-      '\t\t\t"reference": "Patient/\' + id + \'"\n' +
+      '\t\t\t"reference": "Patient/' + id + '"\n' +
       '\t\t},\n' +
       '\t\t"code": {\n' +
       '\t\t\t\t"coding": [\n' +
