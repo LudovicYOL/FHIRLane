@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PersoDataService } from '../perso-data.service';
-import { PatientIdserviceService } from '../patient-idservice.service';
 
 @Component({
   selector: 'app-saisie-data',
