@@ -1,0 +1,11 @@
+
+<button class='btn red' (click)="searchPatient(getPatientId())">Afficher les rendez-vous</button>
+
+<ul *ngFor="let d of myData">
+  <h3>Rendez vous :</h3>
+  <li><div class="type">Date : </div> <div class="info"> {{ formatDate(d.start) }} à {{ formatHeure(d.start) }}</div></li> <br>
+  <li><div class="type">Médecin : </div><div class="info"> {{d.participant[1].actor.display}}</div> </li><br>
+  <li><div class="type">Spécialité : </div><div class="info"> {{d.specialty[0].coding[0].display}}</div> </li><br>
+  <li><div class="type">Description : </div><div class="info"> {{d.comment}}</div></li><br>
+  <li><div class="type">État : </div><div class="info"> {{statutRdv(d.status)}}</div></li><br>
+</ul>

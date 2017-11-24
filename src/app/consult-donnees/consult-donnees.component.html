@@ -1,0 +1,44 @@
+<div class='section'>
+  <div class='row center'>
+    <h4>Consultation des données personnelles</h4>
+  </div>
+</div>
+<div class='section'>
+  <div class='row center'>
+    <button class="btn waves-effect waves-light" (click)="getMyData(getPatientId())">
+      <i class="material-icons right">search</i>
+      Chercher
+    </button>
+  </div>
+</div>
+
+<div class='container' *ngIf='resolveData'>
+  <div class='row center'>
+    <ul class='collapsible'>
+      <h3>Body temperature</h3>
+      <li *ngFor="let d of myData">
+          <div *ngIf="d.code.coding[0].display=='Body temperature'">
+            <span>{{formatDate(d.effectiveDateTime)}}</span>{{d.valueQuantity.value}} {{d.valueQuantity.code}}
+          </div>
+      </li>
+      <h3>Body height</h3>
+          <li *ngFor="let d of myData">
+              <div *ngIf="d.code.coding[0].display=='Body height'">
+                <span>{{formatDate(d.effectiveDateTime)}}</span>{{d.effectiveDateTime}} {{d.valueQuantity.value}} {{d.valueQuantity.code}}
+              </div>
+          </li>
+      <h3>Body weight</h3>
+      <li *ngFor="let d of myData">
+          <div *ngIf="d.code.coding[0].display=='Body Weight'">
+          <span>{{formatDate(d.effectiveDateTime)}}</span>{{d.valueQuantity.value}} {{d.valueQuantity.code}}
+          </div>
+      </li>
+      <h3>Systolic blood pressure</h3>
+      <li *ngFor="let d of myData">
+          <div *ngIf="d.code.coding[0].display=='Systolic blood pressure'">
+            <span>{{formatDate(d.effectiveDateTime)}}</span>{{d.effectiveDateTime}} {{d.valueQuantity.value}} {{d.valueQuantity.code}}
+          </div>
+      </li>
+    </ul>
+  </div>
+</div>
