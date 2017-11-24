@@ -5,13 +5,13 @@ export class GenJsonPostService {
 
   constructor() { }
 
-  generateJSONTemp (temp: string): string {
+  generateJSONTemp (temp: string, id: string): string {
     var date = new Date();
     return '{\n' +
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
       '\t\t"subject": {\n' +
-      '\t\t\t"reference": "Patient/5a12fe978740ca00114092c3"\n' +
+      '\t\t\t"reference": "Patient/"'+id+'\n' +
       '\t\t},\n' +
       '\t\t"code": {\n' +
       '\t\t\t\t"coding": [\n' +
@@ -19,7 +19,6 @@ export class GenJsonPostService {
       '\t\t\t\t\t\t"system": "http://loinc.org",\n' +
       '\t\t\t\t\t\t"code": "8310-5",\n' +
       '\t\t\t\t\t\t"display": "Body temperature",\n' +
-      '\t\t\t\t\t\t"_id": "5a12ffd58740ca00114092e0"\n' +
       '\t\t\t\t\t}\n' +
       '\t\t\t\t]\n' +
       '\t\t\t},\n' +
@@ -32,13 +31,13 @@ export class GenJsonPostService {
       '\t}';
   }
 
-  generateJSONPouls(pouls: string): string {
+  generateJSONPouls(pouls: string, id: string): string {
     var date = new Date();
     return '{\n' +
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
       '\t\t"subject": {\n' +
-      '\t\t\t"reference": "Patient/5a12fe978740ca00114092c3"\n' +
+      '\t\t\t"reference": "Patient/"'+id+'"\n' +
       '\t\t},\n' +
       '\t\t"code": {\n' +
       '\t\t\t\t"coding": [\n' +
@@ -59,13 +58,13 @@ export class GenJsonPostService {
       '\t}';
   }
 
-  generateJSONTaile(taille: string): string {
+  generateJSONTaile(taille: string, id: string): string {
     var date = new Date();
     return '{\n' +
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
       '\t\t"subject": {\n' +
-      '\t\t\t"reference": "Patient/5a12fe978740ca00114092c3"\n' +
+      '\t\t\t"reference": "Patient/"'+id+'\n' +
       '\t\t},\n' +
       '\t\t"code": {\n' +
       '\t\t\t\t"coding": [\n' +
@@ -86,13 +85,13 @@ export class GenJsonPostService {
       '\t}';
   }
 
-  generateJSONPoids(poids: string): string {
+  generateJSONPoids(poids: string, id: string): string {
     var date = new Date();
     return '{\n' +
       '\t\t"resourceType": "Observation",\n' +
       '\t\t"status": "final",\n' +
       '\t\t"subject": {\n' +
-      '\t\t\t"reference": "Patient/5a12fe978740ca00114092c3"\n' +
+      '\t\t\t"reference": "Patient/"'+id+'\n' +
       '\t\t},\n' +
       '\t\t"code": {\n' +
       '\t\t\t\t"coding": [\n' +
@@ -100,7 +99,6 @@ export class GenJsonPostService {
       '\t\t\t\t\t\t"system": "http://loinc.org",\n' +
       '\t\t\t\t\t\t"code": "29463-7",\n' +
       '\t\t\t\t\t\t"display": "Body Weight",\n' +
-      '\t\t\t\t\t\t"_id": "5a12fee38740ca00114092d8"\n' +
       '\t\t\t\t\t}\n' +
       '\t\t\t\t]\n' +
       '\t\t\t},\n' +
